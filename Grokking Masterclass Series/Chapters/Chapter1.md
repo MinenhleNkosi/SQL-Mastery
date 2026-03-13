@@ -69,17 +69,14 @@ Without mastering **tables**, **keys**, and **basic SQL**, advanced topics like 
 ### Diagram A: The Anatomy of a Table (ASCII Art)
 
 Table: Employees (Entity)
-+-------+-------------------+-----------------+-------------+
-| EmpId | FirstName | LastName | HireDate | <--- Columns (Attributes)
-| (PK) | (VARCHAR/string) | (VARCHAR/string)| (DATE/Date) | Define the Schema & Types
-+-------+-------------------+-----------------+-------------+
-| 1 | Jane | Doe | 2022-01-15 | \
-| 2 | John | Smith | 2023-03-10 | |-- Rows (Records/Tuples)
-| 3 | Alice | Johnson | 2023-06-22 | / Actual Data Instances
-+-------+-------------------+-----------------+-------------+
-^
-|
-Primary Key: Uniquely identifies each row. No two rows can have EmpId = 1.
+
+| EmpId (PK) | FirstName (VARCHAR) | LastName (VARCHAR) | HireDate (DATE) |
+| ---------- | ------------------- | ------------------ | --------------- |
+| 1          | Jane                | Doe                | 2022-01-15      |
+| 2          | John                | Smith              | 2023-03-10      |
+| 3          | Alice               | Johnson            | 2023-06-22      |
+
+> **PK — Primary Key**: Uniquely identifies each row. No two rows can share the same `EmpId`.
 
 ### Diagram B: SQL Execution Architecture (Mermaid)
 
@@ -336,7 +333,7 @@ Title __________ NOT NULL,
 
 ### Concept Map:
 
-```mermaid
+```
 [Business Requirement] --> dictates --> [Data Types & Columns]
 |
 v
@@ -518,7 +515,7 @@ From those four sentences, a database designer extracts:
 
 The sequence matters enormously:
 
-```mermaid
+```
 Business requirement
        ↓
    Entities & attributes    (what things exist, what we know about them)
