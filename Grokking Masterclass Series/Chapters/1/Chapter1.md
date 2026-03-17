@@ -40,7 +40,7 @@ Without mastering **tables**, **keys**, and **basic SQL**, advanced topics like 
 
 - **Technical**: An RDBMS stores data in structured, **two-dimensional tables defined by a strict schema**. Unlike flat files, an RDBMS enforces `data types`, `constraints`, and `relationships`, while providing `ACID` (Atomicity, Consistency, Isolation, Durability) guarantees for concurrent access.
 
-- **Why it matters in .NET**: When building web APIs (e.g., `ASP.NET Core`), thousands of users might try to book the same flight simultaneously. _Excel_ would corrupt; an RDBMS handles it safely.
+- **Why it matters in .NET**: When building web APIs (e.g., `ASP.NET Core`), thousands of users might try to book the same flight simultaneously. _Excel_ would corrupt, an RDBMS handles it safely.
 
 ### Concept 2: Tables, Columns, and Rows
 
@@ -82,16 +82,16 @@ Table: Employees (Entity)
 
 ```mermaid
 sequenceDiagram
-participant C as .NET 8 App (C#)
+participant C as .NET 8 App (C-Sharp)
 participant ADO as ADO.NET / EF Core
 participant SQL as SQL Server (RDBMS)
 
-    C->>ADO: 1. Request Data (C# code)
+    C->>ADO: 1. Request Data (C-Sharp)
     Note over ADO: Translates to SQL String
     ADO->>SQL: 2. Open TCP Connection & Send Query (e.g., SELECT)
     Note over SQL: Query Optimizer creates execution plan
     SQL-->>ADO: 3. Return Tabular Data Stream (TDS)
-    Note over ADO: Maps rows to C# Objects (Classes)
+    Note over ADO: Maps rows to C-Sharp Objects (Classes)
     ADO-->>C: 4. Return List<Employee>
 ```
 
